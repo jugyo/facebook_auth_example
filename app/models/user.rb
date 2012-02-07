@@ -13,8 +13,8 @@ class User < ActiveRecord::Base
         :fb_user_id => user_data.id,
         :name => user_data.name,
         :email => user_data.email,
-        :fb_access_token => auth_hash.token,
-        :fb_access_token_expires_at => auth_hash.expires_at
+        :fb_access_token => auth_hash.credentials.token,
+        :fb_access_token_expires_at => auth_hash.credentials.expires_at
       )
     end
   end
