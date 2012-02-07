@@ -1,1 +1,0 @@
-== An example of facebook auth by devise + omniauth
