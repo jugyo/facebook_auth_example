@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  signed in as <strong><%= current_user.name %></strong>
+<% else %>
+  not signed in
+<% end %>
