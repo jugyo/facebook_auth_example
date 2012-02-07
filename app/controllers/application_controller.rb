@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
 
   def require_fb_app_installed
     return unless params[:facebook_params]
-    unless params[:facebook_params][:user_id]
+    if params[:facebook_params][:user_id]
+      User.update_access_token(params[:facebook_params])
+    else
       @location = user_omniauth_authorize_path(:facebook)
       render 'shared/redirect_from_iframe', :layout => false
     end
